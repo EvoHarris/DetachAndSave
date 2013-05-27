@@ -89,6 +89,7 @@ Public Class AttachmentContextMenuItem
             Try
                 For i As Integer = 1 To selection.Count
                     Dim attachment As Outlook.Attachment = selection.Item(i)
+                    attachment.SaveAsFile(attachmentFiles(i))
                     System.Runtime.InteropServices.Marshal.ReleaseComObject(attachment)
                 Next
             Catch e As Exception
